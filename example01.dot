@@ -1,0 +1,24 @@
+digraph G {
+  Expr0 -> Num0 -> Int0 -> Two;
+  Expr0 -> Plus;
+  Expr0 -> Expr1;
+
+  Expr1 -> Num1 -> Int1 -> Three;
+  Expr1 -> Mult;
+  Expr1 -> Num2 -> Dec0 -> MinOne;
+
+  Expr0 [label="expression\nvalue = -1.0\ntype = decimal"];
+  Expr1 [label="expression\nvalue = -3.0\ntype = decimal"];
+  Num0 [label="number\nvalue = 2\ntype = integer"];
+  Num1 [label="number\nvalue = 3\ntype = integer"];
+  Num2 [label="number\nvalue = -1.0\ntype = decimal"];
+  Int0 [label="integer\nvalue = 2\ntype = integer"];
+  Int1 [label="integer\nvalue = 3\ntype = integer"];
+  Dec0 [label="decimal\nvalue = -1.0\ntype = decimal"];
+
+  Plus [label="+"];
+  Mult [label="*"];
+  Two [label="2"];
+  Three [label="3"];
+  MinOne [label="-1."];
+}

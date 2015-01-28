@@ -1,0 +1,20 @@
+digraph G {
+  Expr0 -> Num0 -> Int0 -> Two;
+  Expr0 -> Plus;
+  Expr0 -> Expr1;
+
+  Expr1 -> Num1 -> Int1 -> Three;
+  Expr1 -> Mult;
+  Expr1 -> Num2 -> Dec0 -> MinOne;
+
+  Expr0, Expr1 [label="expression"];
+  Num0, Num1, Num2 [label="number"];
+  Int0, Int1 [label="integer"];
+  Dec0 [label="decimal"];
+
+  Plus [label="+"];
+  Mult [label="*"];
+  Two [label="2"];
+  Three [label="3"];
+  MinOne [label="-1."];
+}

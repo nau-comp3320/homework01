@@ -1,0 +1,14 @@
+digraph G {
+  rankdir = LR;
+
+  Start -> Start [label = "white space"];
+
+  Start -> Integer [label = "digit"];
+  Integer -> Integer [label = "digit"];
+
+  Integer -> IntegerToken;
+  IntegerToken [shape="plaintext"; label="Return IntegerToken"];
+
+  Start -> AddOpToken [label = "'+'"];
+  AddOpToken [shape="plaintext"; label="Return AddOpToken"];
+}
