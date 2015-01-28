@@ -98,8 +98,8 @@ decimal →
 
 Now that you have created your grammar, parse some sentences into trees.  For
 example, the expression `2 + 3 * -1.` should produce something resembling the
-following tree (the following tree is probably missing some nonterminals your
-grammar most likely has):
+following tree.  'Note that the following tree is incomplete and is missing
+some non-terminals that are part of your grammar'.
 
 .Parse tree for `2 + 3 * -1.`
 image::example00.png["Parse tree for '2 + 3 * -1.'"]
@@ -146,8 +146,8 @@ integer →
 
 
 Now that you added semantics to your grammar, revisit the parse trees you
-generated earlier and add the semantic attributes.  Remember that the following
-parse tree is probably missing some non-terminals for your grammar.
+generated earlier and add the semantic attributes.  'Remember that the following
+parse tree is missing some non-terminals for your grammar.'
 
 .Parse tree for `2 + 3 * -1.` with semantic values
 image::example01.png["Parse tree for '2 + 3 * -1.' with semantic values"]
