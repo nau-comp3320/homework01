@@ -132,9 +132,13 @@ sum → number[1] + number[2]
 	     else
 	       integer
 
-number → integer | decimal
-  number.value ← integer.value | decimal.value
-  number.type ← integer.type | decimal.type
+number → integer
+  number.value ← integer.value
+  number.type ← integer.type
+
+number → decimal
+  number.value ← decimal.value
+  number.type ← decimal.type
 
 integer →
   integer.value ← (value of integer literal)
