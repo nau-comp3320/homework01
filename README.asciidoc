@@ -17,11 +17,11 @@ Objectives
 The goal of this homework is to give you some practical experience:
 
 * Defining:
-  * A syntax using BNF and EBNF
-  * Static semantics using an attribute grammar
+** A syntax using BNF and EBNF
+** Static semantics using an attribute grammar
 * Manually applying:
-  * A syntax to generate a parse tree
-  * An attribute grammar to a parse tree
+** A syntax to generate a parse tree
+** An attribute grammar to a parse tree
 * Designing a DFA to tokenize a sentence using a grammar
 
 Procedure
@@ -31,8 +31,8 @@ Procedure
 
 The grammar you are going to develop will support two types:
 
-1. Integers, which contain a +-+ which is immediately followed by sequence of
-   more than one digit, i.e +0+, +1+, +2+, +-1+, +-2+, etc.
+1. Integers, which may contain a +-+ which is immediately followed by sequence
+   of one or more digits, i.e +0+, +1+, +2+, +-1+, +-2+, etc.
 2. Decimals, which are like integers but are followed by a decimal point +.+
    and zero or more digits, i.e. +0.0+, +3.14159+, +-1.+, etc.
 
@@ -162,7 +162,7 @@ expressions:
 
 === Design a lexical analyser
 
-Finally, it's time to design a DFA that you will be use to create a lexical
+Finally, it's time to design a DFA that you will use to create a lexical
 analyser for your grammar.  Here is an example of a DFA that will recognise
 integers, plus operator `+`, and discards white space.
 
