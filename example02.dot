@@ -1,14 +1,22 @@
 digraph G {
   rankdir = LR;
+  node [shape="circle"];
+
 
   Start -> Start [label = "white space"];
 
   Start -> Integer [label = "digit"];
   Integer -> Integer [label = "digit"];
+  Integer -> Start [label="white space/IntegerToken"];
+  Integer -> Finish [label="end of input/IntegerToken"];
 
-  Integer -> IntegerToken;
-  IntegerToken [shape="plaintext"; label="Return IntegerToken"];
+  Start, Integer -> Error  [label="unknown"];
 
-  Start -> AddOpToken [label = "'+'"];
-  AddOpToken [shape="plaintext"; label="Return AddOpToken"];
+  Start -> Finish [label="end of input"];
+
+  Start, Error, Finish [shape="doublecircle"];
+
+  Start -> Start [label="'+'/AddOpToken"];
+
+  Integer -> Start [label="'+'/IntegerToken, AddOpToken"];
 }
