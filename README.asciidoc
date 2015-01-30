@@ -177,7 +177,7 @@ You can also use a state transition table, as in:
 
 [options="header"]
 |=============================================================================
-|       |digit  |white space         |plus                            |end of input
-|default|integer|default             |default/AddOpToken              |accept
-|integer|integer|default/IntegerToken|default/IntegerToken,AcceptToken|accept/IntegerToken
+|       |digit  |white space         |plus                           |end of input
+|default|integer|default             |default/AddOpToken             |accept
+|integer|integer|default/IntegerToken|default/IntegerToken,AddOpToken|accept/IntegerToken
 |=============================================================================
