@@ -172,3 +172,12 @@ integers, plus operator `+`, and discards white space.
 
 .A state diagram for a simple lexical analyser
 image::example02.png["A simple state diagram for a lexical analyser that consumes white space, recognises integers, and recognises the plus operator.]
+
+You can also use a state transition table, as in:
+
+[options="header"]
+|=============================================================================
+|       |digit  |white space         |plus                            |end of input
+|default|integer|default             |default/AddOpToken              |accept
+|integer|integer|default/IntegerToken|default/IntegerToken,AcceptToken|accept/IntegerToken
+|=============================================================================
