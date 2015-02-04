@@ -39,8 +39,10 @@ The grammar you are going to develop will support two types:
 Define rules for these two types using BNF (not EBNF).
 
 ------------------------------------------------------------------------------
-integer → 
-decimal →
+integer → '-' digit | digit
+decimal → integer '.' digits | integer digits '.' digits
+digits  → digit digit
+digit   → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 ------------------------------------------------------------------------------
 
 
@@ -50,6 +52,11 @@ Given the above rules, add the following rule:
 
 ------------------------------------------------------------------------------
 number → integer | decimal
+
+integer → '-' digit | digit
+decimal → integer '.' digits | integer digits '.' digits
+digits  → digit digit
+digit   → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 ------------------------------------------------------------------------------
 
 Define a grammar for mathematical expressions that includes the following
@@ -69,13 +76,19 @@ features:
 The starting rule for this grammar will be 'expression'.  Use plain BNF:
 
 ------------------------------------------------------------------------------
-expression →
+
+expression  →	expression + term | expression - term | term
+term	    →	term * exponent | term / exponent | exponent
+exponent    →	exponent ^ factor | factor
+factor	    →	number | ( expression )
 
 
 number → integer | decimal
 
-integer →
-decimal →
+integer → '-' <digit> | <integer> <digit>
+decimal → <integer> '.' <digits> | <integer> <digits> '.' <digits>
+digits  → <digit> <digit> | <digits>
+digit   → 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 ------------------------------------------------------------------------------
 
 
@@ -84,13 +97,14 @@ decimal →
 Take the grammar you produced in the last step, and redefine it using EBNF.
 
 ------------------------------------------------------------------------------
-expression →
+
+expression -> term [ ('+' | '-') term ]*
+term -> factor [ ('*' | '/') factor ]*
+factor -> base [ '^' exponent ]*
+base -> '(' expr ')' | rvalue
+exponent -> '(' expr ')' | rvalue
 
 
-number → integer | decimal
-
-integer →
-decimal →
 ------------------------------------------------------------------------------
 
 
